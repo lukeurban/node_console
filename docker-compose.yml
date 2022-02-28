@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  api:
+    image: thatlukeurban/node_console
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+      - 3000:80
+    restart: "no"
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
+    command: zsh
