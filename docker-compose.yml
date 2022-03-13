@@ -2,6 +2,7 @@ version: "3.8"
 services:
   api:
     image: thatlukeurban/node_console
+    container_name: the_app_console
     build:
       dockerfile: ./Dockerfile
       context: .
