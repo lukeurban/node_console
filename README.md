@@ -38,7 +38,11 @@ and finally connect to the console:
 ```bash
 docker-compsoe exec -it the_app_console zsh
 ```
+You'll use console as a `node` user. On Mac OS you might to be logged as a `root` user. In order to do that just type:
 
+```bash
+docker-compsoe exec -it the_app_console mac
+```
 You can change the container name `the_app_console` in the docker-compose file.
 
 ## Links
