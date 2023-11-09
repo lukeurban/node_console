@@ -1,4 +1,4 @@
-FROM node:16.14.0
+FROM node:21.1.0
 
 RUN apt-get update && apt-get install -y \
     curl \
