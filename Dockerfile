@@ -36,16 +36,17 @@ ADD ./.zshrc /etc/skel/.zshrc
 COPY ./mac /mac
 COPY ./mac /usr/local/bin/mac
 RUN chmod 777 /mac
-
 RUN echo '%sudo  ALL=(ALL) NOPASSWD: ALL' >>/etc/sudoers
+
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 USER node
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
+USER root
 RUN echo "fs.inotify.max_user_instances=524288" >> /etc/sysctl.conf
 RUN echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf
 RUN echo "fs.inotify.max_queued_events=524288" >> /etc/sysctl.conf
-
+USER node
 WORKDIR /app
 
 CMD [ "zsh" ]
