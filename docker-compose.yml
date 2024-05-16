@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  api:
+  console:
     image: thatlukeurban/node_console
     container_name: the_app_console
     build:
